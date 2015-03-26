@@ -3,4 +3,12 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="password">knowroaming</string>
+    <string name="title_activity_connection">ConnectionActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tvAddress">Enter the server IP Address:</string>
+    <string name="tvPort">Enter port number:</string>
+    <string name="tvListen">Listening for your Special SMS</string>
 </resources>

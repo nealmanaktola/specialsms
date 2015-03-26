@@ -14,6 +14,7 @@ import com.knowroaming.specialsms.helpers.SpecialSMSHelper;
  * Created by Neal on 3/20/2015.
  */
 public class SmsReceiver extends BroadcastReceiver {
+    //IntentFilter Action
     public static final String ACTION = "com.knowroaming.specialsms";
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -30,6 +31,8 @@ public class SmsReceiver extends BroadcastReceiver {
                     String sender = smsMessage.getOriginatingAddress();
                     String body = smsMessage.getMessageBody();
                     Log.d("SpecialSMS", "Message Received:" + body);
+
+                    //Checks if Message is Special
                     if (SpecialSMSHelper.isSpecial(body)) {
                        Log.d("SpecialSMS", "Special SMS Intercepted!");
 
@@ -37,6 +40,7 @@ public class SmsReceiver extends BroadcastReceiver {
                        in.putExtra("sender", sender);
                        in.putExtra("message", body);
 
+                       //Broadcasts message to MainActivity
                        context.sendBroadcast(in);
                     }
                 }

@@ -2,12 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.knowroaming.specialsms" >
 
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name" >
@@ -16,16 +18,20 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
-        <receiver android:name=".receivers.SmsReceiver" android:enabled="true" >
-            <intent-filter android:priority="100">
+        <receiver
+            android:name=".receivers.SmsReceiver"
+            android:enabled="true" >
+            <intent-filter android:priority="100" >
                 <action android:name="android.provider.Telephony.SMS_RECEIVED" />
             </intent-filter>
         </receiver>
-    </application>
-    <uses-permission android:name="android.permission.RECEIVE_SMS" />
 
+        <activity
+            android:name=".activities.ConnectionActivity"
+            android:label="@string/title_activity_connection" >
+        </activity>
+    </application>
 
 </manifest>
