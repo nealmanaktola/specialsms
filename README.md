@@ -16,6 +16,7 @@ An app to intercept special SMS. Intercepted SMS are sent to a server, and store
 For android app, import project into Android Studio.  
 
 ###Server Application:
+JDK 1.70_25 was used. Maven was used for project build    
 To compile:  
     `mvn compile`  
 To create jar:  
