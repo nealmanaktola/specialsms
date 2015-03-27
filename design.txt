@@ -9,6 +9,8 @@ Basic checking has been done for input validation, using Regex see SpecialSMSHel
 Upon successful connection, broadcast receiver intercepts sms, if special, broadcasts to MainActivity
 Upon broadcast to MainActivity, MainActivty sends SMS to server
 
+Texts were not aborted as this is not supported on KitKat and above.
+Tested using android-sdk 21 and Nexus 4 emulator.
 Protocol
 ---------
 Server-Client protocol was done through the SpecialMessage Model 
