@@ -13,7 +13,8 @@ An app to intercept special SMS. Intercepted SMS are sent to a server, and store
 ##Installation:
 
 ###Android Application
-For android app, import project into Android Studio.  
+For android app, import project into Android Studio.    
+Android sdk 21 is target, and was tested on nexus 4 emu.  
 
 ###Server Application:
 JDK 1.70_25 was used. Maven was used for project build    
