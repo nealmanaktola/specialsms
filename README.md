@@ -17,10 +17,14 @@ For android app, import project into Android Studio.
 
 ###Server Application:
 To compile:
-    mvn compile
+    `mvn compile`
+To create jar:
+    `mvn package`
 To run:
-    java -cp target/Server-1.0-SNAPSHOT.jar com.knowroaming.Server
-
-
+    `java -cp target/Server-1.0-SNAPSHOT.jar com.knowroaming.Server`
+    
+###Testing
+The testing below was done through telnet sms. Use telnet to connect the emulator, or feel free  
+to use a real device.
 
 ![alt text](https://raw.githubusercontent.com/nealmanaktola/specialsms/master/specialsms.gif "Logo Title Text 1")
