@@ -1,0 +1,54 @@
+Android Application Design
+--------------------------
+
+Dialog Fragment for Connection
+	-Takes IP Address
+	-Port
+Basic checking has been done for input validation, using Regex see SpecialSMSHelper class
+
+Upon successful connection, broadcast receiver intercepts sms, if special, broadcasts to MainActivity
+Upon broadcast to MainActivity, MainActivty sends SMS to server
+
+Protocol
+---------
+Server-Client protocol was done through the SpecialMessage Model 
+The Special Message model contains four parameters: timestamp, sender, message, encodedMessage
+
+The encoded message was used to detect the deletion sequence on the server.
+
+Encryption
+----------
+Encrypton was done through SSL. SSL Encryption was done to ensure server and client are trustworthy, as 
+mutual authentication can be completed. Created two self-signed certs, one for the server and one for the client (app)
+Server: sms_server.jks 
+App: sms_app.bks (Bouncy Castle bks)
+
+Cipher Suite selected was SSL_RSA_WITH_RC4_128_MD5. (128 bit encryption)
+The client/server are securely connected, with a symmetric encryption key.
+
+Datastructure
+-------------
+Datastructure selected was a Hashmap<String, ArrayList<SpecialMessage>> on the server.
+This was selected if one needs to see messages for a user quickly. O(1) lookup for a user's texts.
+
+Depending on its usecase, this may be beneficial.
+
+UI
+--
+As aesthetics were not a concern in this app, I used simple standard android elements. I used a progressbar
+for loading, and a dialog fragment for connection.
+
+Failure/Fault Tolerance
+------------------------
+The app/server has fault tolerance. Upon disconnection and message send, a connection dialog will appear
+on a lost connection. IP Address/Port numbers are validated. A connection error is issued if a connection timesout.
+
+Fault Tolerance was detected on server-side for SSL (missing certificate, invalid cert, etc.)
+
+Questions
+----------
+Feel free to contact me @ nealmanaktola@gmail.com
+
+
+
+ 

@@ -43,7 +43,7 @@ public class ConnectionDialog extends DialogFragment {
     private SSLSocket sslSocket = null;
 
     public ConnectionDialog() {
-        // Empty constructor required for DialogFragment
+        // Empty constructor required
     }
 
     public static ConnectionDialog newInstance() {
@@ -104,7 +104,6 @@ public class ConnectionDialog extends DialogFragment {
         }
 
         protected SSLSocket doInBackground(String... strings) {
-            // Some long-running task like downloading an image.
             KeyStore ks = null;
             String ipAddress = strings[0];
             SSLSocket socket = null;
@@ -128,6 +127,7 @@ public class ConnectionDialog extends DialogFragment {
 
                 socket.startHandshake();
 
+                //Create ObjectOutputStream
                 out =  new ObjectOutputStream(socket.getOutputStream());
             } catch (Exception e) {
                 e.printStackTrace();
@@ -138,8 +138,9 @@ public class ConnectionDialog extends DialogFragment {
 
         protected void onPostExecute(SSLSocket result) {
             // This method is executed in the UIThread
-            // with access to the result of the long running task
+
             sslSocket = result;
+
             // Hide the progress bar
             progressBar.setVisibility(ProgressBar.INVISIBLE);
 
@@ -150,7 +151,6 @@ public class ConnectionDialog extends DialogFragment {
                 getDialog().dismiss();
 
             }
-
         }
     }
 
