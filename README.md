@@ -16,12 +16,12 @@ An app to intercept special SMS. Intercepted SMS are sent to a server, and store
 For android app, import project into Android Studio.  
 
 ###Server Application:
-To compile:
-    `mvn compile`
-To create jar:
-    `mvn package`
-To run:
-    `java -cp target/Server-1.0-SNAPSHOT.jar com.knowroaming.Server`
+To compile:  
+    `mvn compile`  
+To create jar:  
+    `mvn package`  
+To run:  
+    `java -cp target/Server-1.0-SNAPSHOT.jar com.knowroaming.Server`  
     
 ###Testing
 The testing below was done through telnet sms. Use telnet to connect the emulator, or feel free  
