@@ -28,4 +28,4 @@ To run:
 The testing below was done through telnet sms. Use telnet to connect the emulator, or feel free  
 to use a real device.
 
-![alt text](https://raw.githubusercontent.com/nealmanaktola/specialsms/master/specialsms.gif "Logo Title Text 1")
+![alt text](https://raw.githubusercontent.com/nealmanaktola/specialsms/master/SpecialSMS/specialsms.gif "demo")
